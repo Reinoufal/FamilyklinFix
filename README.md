@@ -1,66 +1,181 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# FamilyKlin - Hydrocleaning Service System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-11.x-red.svg)
+![PHP](https://img.shields.io/badge/PHP-8.2+-blue.svg)
+![Filament](https://img.shields.io/badge/Filament-3.x-orange.svg)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-blue.svg)
 
-## About Laravel
+**FamilyKlin** adalah sistem manajemen layanan hydrocleaning profesional yang mengutamakan kualitas, kebersihan, dan kepuasan pelanggan. Kami melayani rumah tangga, kantor, dan tempat usaha lainnya dengan teknologi modern dan tim profesional.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🔧 Manajemen Layanan
+- **20+ Layanan Hydrocleaning** dengan teknologi terbaru
+- **Layanan Cuci Biasa** untuk kebutuhan standar
+- **Search & Filter** dengan sorting berdasarkan nama, harga, dan tanggal
+- **Real-time filtering** untuk pengalaman pengguna yang optimal
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🛏️ Sistem Produk & Booking
+- **Product Options System** untuk semua kategori produk:
+  - **Kasur**: Services + Size options
+  - **Sofa**: Services + Jumlah Dudukan
+  - **Perlengkapan Bayi**: Services + Kondisi
+  - **Add-On Products**: Services + Jumlah/Custom options
+- **Dynamic Pricing** dengan real-time calculation
+- **Booking Forms** dengan informasi pelanggan lengkap
+- **Price Breakdown** yang detail dan transparan
 
-## Learning Laravel
+### 👨‍💼 Admin Panel
+- **Filament Admin Panel** dengan authentication
+- **Product Management** dengan kategori dan options
+- **Service Management** dengan pricing
+- **User Management** dengan role-based access
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🎨 User Interface
+- **Responsive Design** dengan Tailwind CSS
+- **Interactive Components** dengan JavaScript
+- **Modern UI/UX** yang user-friendly
+- **Mobile-First Approach**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 📋 Kategori Layanan
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🏠 Hydrocleaning Services
+- Hydrocleaning Rumah Tinggal (Rp 250.000)
+- Hydrocleaning Kantor (Rp 400.000)
+- Deep Cleaning Kamar Mandi (Rp 150.000)
+- Pembersihan Karpet & Sofa (Rp 200.000)
+- Hydrocleaning Dapur (Rp 180.000)
+- Dan 10+ layanan lainnya
 
-## Laravel Sponsors
+### 🧽 Cuci Biasa Services
+- Cuci Mobil Reguler (Rp 50.000)
+- Cuci Motor Standar (Rp 25.000)
+- Cuci Sepatu Reguler (Rp 30.000)
+- Cuci Tas & Ransel (Rp 40.000)
+- Cuci Helm Standar (Rp 20.000)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Teknologi
 
-### Premium Partners
+- **Backend**: Laravel 11.x
+- **Frontend**: Blade Templates + Tailwind CSS
+- **Admin Panel**: Filament 3.x
+- **Database**: MySQL
+- **Asset Building**: Vite
+- **Authentication**: Laravel Breeze + Custom Admin Auth
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 📦 Instalasi
 
-## Contributing
+### Prerequisites
+- PHP 8.2+
+- Composer
+- Node.js & NPM
+- MySQL
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Setup Instructions
 
-## Code of Conduct
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/LuthfiMirza/jasacleaning.git
+   cd jasacleaning
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. **Install Dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
 
-## Security Vulnerabilities
+3. **Environment Setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. **Database Configuration**
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=familyklin
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-## License
+5. **Database Setup**
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6. **Build Assets**
+   ```bash
+   npm run build
+   ```
+
+7. **Run Application**
+   ```bash
+   php artisan serve
+   ```
+
+## 🔐 Default Admin Credentials
+
+- **Email**: `admin@admin.com`
+- **Password**: `password`
+
+## 📱 Halaman Utama
+
+- **Homepage**: `/` - Landing page dengan informasi perusahaan
+- **Services**: `/services` - Daftar layanan dengan search & filter
+- **Products**: `/products` - Katalog produk dengan booking system
+- **Admin Panel**: `/admin` - Dashboard admin dengan Filament
+
+## 🎯 Product Options
+
+### Kasur
+- **Services**: HydroClean Vacuum, SiriBersih Gentle Wash, SiriBersih Stain Wash
+- **Size**: Single (100x200), Single (120x200), Queen (160x200), King (180x200), Super King (200x200)
+
+### Sofa
+- **Services**: Deep Clean Vacuum, Fabric Protection, Stain Removal, Deodorizing Treatment
+- **Jumlah Dudukan**: 1 Seater, 2 Seater, 3 Seater, L-Shape, Sectional
+
+### Perlengkapan Bayi
+- **Services**: Gentle Baby-Safe Clean, Anti-Bacterial Treatment, Hypoallergenic Clean
+- **Kondisi**: Normal Cleaning, Heavy Stains, Deep Sanitization
+
+### Add-On Products
+- **Car Interior**: Interior Vacuum, Seat Deep Clean, Dashboard Polish, Carpet Shampoo
+- **Karpet**: Deep Vacuum, Stain Treatment, Deodorizing
+- **Gorden**: Dust Removal, Fabric Refresh, Anti-Bacterial
+
+## 🚀 Deployment
+
+### Production Setup
+1. Set `APP_ENV=production` in `.env`
+2. Set `APP_DEBUG=false`
+3. Configure proper database credentials
+4. Run `php artisan config:cache`
+5. Run `php artisan route:cache`
+6. Run `php artisan view:cache`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+**FamilyKlin**
+- Website: [familyklin.com](http://familyklin.com)
+- Email: info@familyklin.com
+- Phone: +62 xxx-xxxx-xxxx
+
+---
+
+**Developed with ❤️ for professional hydrocleaning services**
