@@ -75,8 +75,8 @@
 
 1. **Clone Repository**
    ```bash
-   git clone https://github.com/LuthfiMirza/jasacleaning.git
-   cd jasacleaning
+   git clone https://github.com/Reinoufal/FamilyklinFix
+   cd FamilyklinFIx
    ```
 
 2. **Install Dependencies**
@@ -131,7 +131,7 @@
 ## 🎯 Product Options
 
 ### Kasur
-- **Services**: HydroClean Vacuum, SiriBersih Gentle Wash, SiriBersih Stain Wash
+- **Services**: HydroVaccum, Cuci Bersih
 - **Size**: Single (100x200), Single (120x200), Queen (160x200), King (180x200), Super King (200x200)
 
 ### Sofa
