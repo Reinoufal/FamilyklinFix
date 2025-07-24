@@ -16,20 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->decimal('price', 10, 2);
+            $table->decimal('price_max', 10, 2)->nullable();
             $table->string('image')->nullable();
-            $table->string('categories')->nullable();
+            $table->string('unit')->nullable();
             $table->boolean('is_available')->default(true);
-            $table->enum('type', ['kasur', 'sofa', 'perlengkapan_bayi', 'add_on'])->nullable();
-            $table->enum('size', [
-                // Kasur sizes
-                'super_king', 'king', 'queen', 'single', 'kecil',
-                // Sofa sizes
-                'standard', 'jumbo', 'bed', 'L_shape', 'recliner',
-                // Null for other types
-                null
-            ])->nullable();
-            $table->integer('seat_count')->nullable(); // Untuk car interior
-            $table->string('unit')->nullable(); // Untuk items yang menggunakan unit m2
+            $table->enum('type', ['kasur', 'sofa', 'perlengkapan_bayi', 'add_on']);
             $table->timestamps();
         });
     }

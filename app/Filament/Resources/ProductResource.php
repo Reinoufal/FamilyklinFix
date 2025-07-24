@@ -29,62 +29,43 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')
-                    ->required()
-                    ->label('Nama Produk'),
-                Textarea::make('description')
-                    ->required()
-                    ->label('Deskripsi'),
-                TextInput::make('price')
+                Forms\Components\TextInput::make('name')
+                    ->label('Nama Produk')
+                    ->required(),
+                Forms\Components\Textarea::make('description')
+                    ->label('Deskripsi')
+                    ->required(),
+                Forms\Components\TextInput::make('price')
+                    ->label('Harga Minimum')
                     ->numeric()
-                    ->required()
-                    ->label('Harga'),
-                Select::make('categories')
-                    ->options([
-                        'hydrovaccum' => 'Hydrovaccum',
-                        'cuci' => 'Cuci',
-        // tambahkan opsi lain jika diperlukan
-                    ])
-                    ->required()
-                    ->label('Kategori Layanan'),
-                Select::make('size')
-                    ->options([
-                        // Kasur sizes
-                        'super_king' => 'Super King',
-                        'king' => 'King',
-                        'queen' => 'Queen',
-                        'single' => 'Single',
-                        'kecil' => 'Kecil',
-                        // Sofa sizes
-                        'standard' => 'Standard',
-                        'jumbo' => 'Jumbo',
-                        'bed' => 'Bed',
-                        'L_shape' => 'L Shape',
-                        'recliner' => 'Recliner'
-                    ])
-                    ->label('Ukuran'),
-                TextInput::make('seat_count')
+                    ->required(),
+                Forms\Components\TextInput::make('price_max')
+                    ->label('Harga Maksimum')
                     ->numeric()
-                    ->label('Jumlah Kursi')
-                    ->helperText('Khusus untuk sofa'),
-                TextInput::make('unit')
-                    ->label('Unit')
-                    ->helperText('Contoh: m2'),
-                FileUpload::make('image')
+                    ->required(),
+                Forms\Components\TextInput::make('stock')
+                    ->label('Stok')
+                    ->numeric()
+                    ->default(0)
+                    ->minValue(0),
+                Forms\Components\TextInput::make('unit')
+                    ->label('Unit'),
+                Forms\Components\FileUpload::make('image')
+                    ->label('Gambar Produk')
                     ->image()
-                    ->directory('products')
-                    ->preserveFilenames()
-                    ->maxSize(2048)
-                    ->disk('public')
-                    ->visibility('public')
-                    ->imageResizeMode('contain')
-                    ->imageCropAspectRatio('16:9')
-                    ->imageResizeTargetWidth('1920')
-                    ->imageResizeTargetHeight('1080')
-                    ->label('Gambar Produk'),
-                Toggle::make('is_available')
-                    ->default(true)
-                    ->label('Tersedia'),
+                    ->directory('products'),
+                Forms\Components\Toggle::make('is_available')
+                    ->label('Tersedia')
+                    ->default(true),
+                Forms\Components\Select::make('type')
+                    ->label('Tipe Produk')
+                    ->options([
+                        'kasur' => 'Kasur',
+                        'sofa' => 'Sofa',
+                        'perlengkapan_bayi' => 'Perlengkapan Bayi',
+                        'add_on' => 'Add On',
+                    ])
+                    ->required(),
             ]);
     }
 
@@ -103,6 +84,11 @@ class ProductResource extends Resource
                     ->label('Harga')
                     ->money('idr')
                     ->sortable(),
+                Tables\Columns\TextColumn::make('stock')
+                    ->label('Stok')
+                    ->sortable()
+                    ->badge()
+                    ->color(fn (Product $record): string => $record->stock > 10 ? 'success' : ($record->stock > 0 ? 'warning' : 'danger')),
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Gambar'),
                 Tables\Columns\IconColumn::make('is_available')

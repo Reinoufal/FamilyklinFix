@@ -12,6 +12,19 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     /**
+     * Show the user's profile and order history.
+     */
+    public function show(Request $request): View
+    {
+        $orders = \App\Models\Order::where('user_id', $request->user()->id)
+            ->orderByDesc('placed_at')
+            ->get();
+        return view('profile.show', [
+            'orders' => $orders,
+        ]);
+    }
+
+    /**
      * Display the user's profile form.
      */
     public function edit(Request $request): View

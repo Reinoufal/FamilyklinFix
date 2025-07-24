@@ -9,7 +9,7 @@
           <div>
             <h1 class="text-4xl md:text-6xl font-bold">Bersih, Segar, Profesional</h1>
             <p class="mt-4 text-lg md:text-xl">Layanan Hydrocleaning Terpercaya di Kota Anda</p>
-            <a href="#booking" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition">Pesan Sekarang</a>
+            <a href="{{ route('products.index') }}" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition">Pesan Sekarang</a>
           </div>
         </div>
       </div>

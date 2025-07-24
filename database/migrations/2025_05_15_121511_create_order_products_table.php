@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->integer('quantity')->default(1);
             $table->decimal('unit_price', 10, 2);
+            $table->json('options')->nullable();
             $table->primary(['order_id', 'product_id']);
         });
     }

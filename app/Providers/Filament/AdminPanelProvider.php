@@ -2,10 +2,18 @@
 
 namespace App\Providers\Filament;
 
+use App\Http\Middleware\FilamentAdminMiddleware;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use App\Filament\Widgets\UserStatsWidget;
+use App\Filament\Widgets\SalesStatsWidget;
+use App\Filament\Widgets\SalesChartWidget;
+use App\Filament\Widgets\LatestOrdersWidget;
+use App\Filament\Widgets\TopProductsWidget;
+use App\Filament\Widgets\OrderStatusWidget;
+use App\Filament\Widgets\ProductServiceStatsWidget;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -26,6 +34,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->brandName('FamilyKlin')
             ->login()
             ->authGuard('web')
             ->colors([
@@ -40,6 +49,13 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
+                UserStatsWidget::class,
+                SalesStatsWidget::class,
+                SalesChartWidget::class,
+                LatestOrdersWidget::class,
+                TopProductsWidget::class,
+                OrderStatusWidget::class,
+                ProductServiceStatsWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -54,6 +70,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+                FilamentAdminMiddleware::class,
             ]);
     }
 }

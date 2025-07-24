@@ -29,6 +29,15 @@ return new class extends Migration
             $table->integer('sort_order')->default(0);
             $table->timestamps();
         });
+
+        Schema::create('product_option_value_combinations', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->foreignId('layanan_value_id')->constrained('product_option_values')->onDelete('cascade');
+            $table->foreignId('ukuran_value_id')->constrained('product_option_values')->onDelete('cascade');
+            $table->decimal('price', 10, 2);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -36,6 +45,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('product_option_value_combinations');
         Schema::dropIfExists('product_option_values');
         Schema::dropIfExists('product_options');
     }

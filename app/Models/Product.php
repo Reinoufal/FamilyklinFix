@@ -10,12 +10,15 @@ class Product extends Model
         'name',
         'description',
         'price',
+        'price_max',
         'image',
         'is_available',
         'type',
         'size',
         'seat_count',
-        'unit'
+        'unit',
+        'stock',
+        'sold'
     ];
 
     protected $casts = [

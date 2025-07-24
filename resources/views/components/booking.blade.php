@@ -1,30 +1,22 @@
-<section id="booking" class="py-20 bg-blue-50" data-aos="fade-up">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center text-blue-800 mb-10">Formulir Booking</h2>
-    <form action="/booking" method="POST" class="grid gap-6 bg-white p-8 rounded-2xl shadow-xl">
-      <div>
-        <label class="block text-sm text-gray-700 font-medium mb-1">Nama Lengkap</label>
-        <input type="text" name="name" class="w-full border border-gray-300 rounded-xl px-4 py-2" required>
+<section id="produk-terlaris" class="py-20 bg-blue-50" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-blue-800 mb-10">Produk Terlaris</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      @foreach($bestSellingProducts as $product)
+        <div class="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center">
+          <img src="{{ asset('storage/' . $product->image) ?? asset('/images/default-product.png') }}" alt="{{ $product->name }}" class="w-32 h-32 object-cover rounded mb-4">
+          <h3 class="text-lg font-semibold text-blue-800 mb-2">{{ $product->name }}</h3>
+          <p class="text-gray-600 mb-2">{{ $product->description }}</p>
+          <div class="text-blue-700 font-bold text-xl mb-4">
+            @if($product->price_max && floatval($product->price_max) > floatval($product->price))
+              Rp {{ number_format($product->price,0,',','.') }} – Rp {{ number_format($product->price_max,0,',','.') }}
+            @else
+              Rp {{ number_format($product->price,0,',','.') }}
+            @endif
       </div>
-      <div>
-        <label class="block text-sm text-gray-700 font-medium mb-1">Nomor Telepon</label>
-        <input type="text" name="phone" class="w-full border border-gray-300 rounded-xl px-4 py-2" required>
+          <a href="{{ route('products.show', $product->id) }}" class="px-4 py-2 bg-blue-700 text-white rounded-full hover:bg-blue-800 transition font-semibold">Lihat Detail</a>
       </div>
-      <div>
-        <label class="block text-sm text-gray-700 font-medium mb-1">Alamat</label>
-        <input type="text" name="address" class="w-full border border-gray-300 rounded-xl px-4 py-2" required>
+      @endforeach
       </div>
-      <div>
-        <label class="block text-sm text-gray-700 font-medium mb-1">Pilih Layanan</label>
-        <select name="service" class="w-full border border-gray-300 rounded-xl px-4 py-2">
-          <option value="AC">Hydrocleaning AC</option>
-          <option value="Kasur">Hydrocleaning Kasur</option>
-          <option value="Sofa">Hydrocleaning Sofa</option>
-        </select>
-      </div>
-      <div class="text-center">
-        <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-full font-semibold shadow">Kirim Booking</button>
-      </div>
-    </form>
   </div>
 </section>

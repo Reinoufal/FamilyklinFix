@@ -75,7 +75,7 @@
                         </svg>
                         <div class="ml-4">
                             <h4 class="text-lg font-semibold text-gray-800">Alamat</h4>
-                            <p class="text-gray-600">Jl. Contoh No. 123, Kota, Provinsi</p>
+                            <p class="text-gray-600">Jl. Warung Buncit No. 59</p>
                         </div>
                     </div>
                     <div class="flex items-start">
@@ -84,7 +84,7 @@
                         </svg>
                         <div class="ml-4">
                             <h4 class="text-lg font-semibold text-gray-800">Telepon</h4>
-                            <p class="text-gray-600">+62 123 4567 890</p>
+                            <p class="text-gray-600">0838 9310 6918</p>
                         </div>
                     </div>
                     <div class="flex items-start">
@@ -93,7 +93,7 @@
                         </svg>
                         <div class="ml-4">
                             <h4 class="text-lg font-semibold text-gray-800">Email</h4>
-                            <p class="text-gray-600">info@familyklin.com</p>
+                            <p class="text-gray-600"><a href="mailto:familyklin88@gmail.com" class="com">familyklin88@gmail.com</a></p>
                         </div>
                     </div>
                 </div>

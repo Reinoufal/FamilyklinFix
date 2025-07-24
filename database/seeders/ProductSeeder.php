@@ -10,179 +10,89 @@ class ProductSeeder extends Seeder
 {
     public function run(): void
     {
-        // Kasur Products
-        $kasurCategory = Category::where('name', 'Kasur')->first();
-        $kasurProducts = [
-            [
-                'name' => 'Kasur Super King',
-                'description' => 'Layanan cuci kasur ukuran Super King',
-                'price' => 350000,
-                'type' => 'kasur',
-                'size' => 'super_king'
-            ],
-            [
-                'name' => 'Kasur King',
-                'description' => 'Layanan cuci kasur ukuran King',
-                'price' => 300000,
-                'type' => 'kasur',
-                'size' => 'king'
-            ],
-            [
-                'name' => 'Kasur Queen',
-                'description' => 'Layanan cuci kasur ukuran Queen',
-                'price' => 260000,
-                'type' => 'kasur',
-                'size' => 'queen'
-            ],
-            [
-                'name' => 'Kasur Single',
-                'description' => 'Layanan cuci kasur ukuran Single',
-                'price' => 200000,
-                'type' => 'kasur',
-                'size' => 'single'
-            ],
-            [
-                'name' => 'Kasur Kecil',
-                'description' => 'Layanan cuci kasur ukuran Kecil',
-                'price' => 150000,
-                'type' => 'kasur',
-                'size' => 'kecil'
-            ]
+        // Array harga untuk range
+        $hargaKasur = [
+            'Kasur Super King' => [170000, 350000],
+            'Kasur King' => [160000, 300000],
+            'Kasur Queen' => [150000, 260000],
+            'Kasur Singel' => [120000, 200000],
+            'Kasur Kecil' => [85000, 150000],
+        ];
+        $hargaSofa = [
+            'Sofa Standart' => [50000, 65000],
+            'Sofa Jumbo' => [55000, 75000],
+            'Sofa Bed' => [125000, 200000],
+            'Sofa L' => [175000, 300000],
+            'Sofa Reclainer' => [75000, 95000],
+        ];
+        $hargaPerlengkapanBayi = [
+            'Matras Bayi' => [60000, 100000],
+            'Box Bayi' => [60000, 100000],
+            'Stroler, Car seat' => [50000, 80000],
+            'Bouncer' => [50000, 80000],
+        ];
+        $hargaAddOn = [
+            'Kursi' => [30000, 30000],
+            'Karpet (m2)' => [15000, 15000],
+            'Tirai (m2)' => [10000, 10000],
+            'Car interior (5 seat)' => [150000, 150000],
+            'Car interior (8 seat)' => [180000, 180000],
+            'Bantal / guling' => [5000, 5000],
         ];
 
-        // Sofa Products
-        $sofaCategory = Category::where('name', 'Sofa')->first();
-        $sofaProducts = [
-            [
-                'name' => 'Sofa Standard',
-                'description' => 'Layanan cuci sofa ukuran Standard',
-                'price' => 65000,
-                'type' => 'sofa',
-                'size' => 'standard'
-            ],
-            [
-                'name' => 'Sofa Jumbo',
-                'description' => 'Layanan cuci sofa ukuran Jumbo',
-                'price' => 75000,
-                'type' => 'sofa',
-                'size' => 'jumbo'
-            ],
-            [
-                'name' => 'Sofa Bed',
-                'description' => 'Layanan cuci sofa bed',
-                'price' => 200000,
-                'type' => 'sofa',
-                'size' => 'bed'
-            ],
-            [
-                'name' => 'Sofa L',
-                'description' => 'Layanan cuci sofa bentuk L',
-                'price' => 300000,
-                'type' => 'sofa',
-                'size' => 'L_shape'
-            ],
-            [
-                'name' => 'Sofa Recliner',
-                'description' => 'Layanan cuci sofa recliner',
-                'price' => 95000,
-                'type' => 'sofa',
-                'size' => 'recliner'
-            ]
+        $products = [
+            // Kasur
+            ['name' => 'Kasur Super King', 'type' => 'kasur', 'description' => ''],
+            ['name' => 'Kasur King', 'type' => 'kasur', 'description' => ''],
+            ['name' => 'Kasur Queen', 'type' => 'kasur', 'description' => ''],
+            ['name' => 'Kasur Singel', 'type' => 'kasur', 'description' => ''],
+            ['name' => 'Kasur Kecil', 'type' => 'kasur', 'description' => ''],
+            // Sofa
+            ['name' => 'Sofa Standart', 'type' => 'sofa', 'description' => ''],
+            ['name' => 'Sofa Jumbo', 'type' => 'sofa', 'description' => ''],
+            ['name' => 'Sofa Bed', 'type' => 'sofa', 'description' => ''],
+            ['name' => 'Sofa L', 'type' => 'sofa', 'description' => ''],
+            ['name' => 'Sofa Reclainer', 'type' => 'sofa', 'description' => ''],
+            // Perlengkapan Bayi
+            ['name' => 'Matras Bayi', 'type' => 'perlengkapan_bayi', 'description' => ''],
+            ['name' => 'Box Bayi', 'type' => 'perlengkapan_bayi', 'description' => ''],
+            ['name' => 'Stroler, Car seat', 'type' => 'perlengkapan_bayi', 'description' => ''],
+            ['name' => 'Bouncer', 'type' => 'perlengkapan_bayi', 'description' => ''],
+            // Add On
+            ['name' => 'Kursi', 'type' => 'add_on', 'description' => ''],
+            ['name' => 'Karpet (m2)', 'type' => 'add_on', 'description' => ''],
+            ['name' => 'Tirai (m2)', 'type' => 'add_on', 'description' => ''],
+            ['name' => 'Car interior (5 seat)', 'type' => 'add_on', 'description' => ''],
+            ['name' => 'Car interior (8 seat)', 'type' => 'add_on', 'description' => ''],
+            ['name' => 'Bantal / guling', 'type' => 'add_on', 'description' => ''],
         ];
 
-        // Perlengkapan Bayi Products
-        $bayiCategory = Category::where('name', 'Perlengkapan Bayi')->first();
-        $bayiProducts = [
-            [
-                'name' => 'Matras Bayi',
-                'description' => 'Layanan cuci matras bayi',
-                'price' => 100000,
-                'type' => 'perlengkapan_bayi'
-            ],
-            [
-                'name' => 'Box Bayi',
-                'description' => 'Layanan cuci box bayi',
-                'price' => 100000,
-                'type' => 'perlengkapan_bayi'
-            ],
-            [
-                'name' => 'Stroller/Car Seat',
-                'description' => 'Layanan cuci stroller atau car seat bayi',
-                'price' => 80000,
-                'type' => 'perlengkapan_bayi'
-            ],
-            [
-                'name' => 'Bouncer',
-                'description' => 'Layanan cuci bouncer bayi',
-                'price' => 80000,
-                'type' => 'perlengkapan_bayi'
-            ]
-        ];
-
-        // Add On Products
-        $addOnCategory = Category::where('name', 'Add On')->first();
-        $addOnProducts = [
-            [
-                'name' => 'Kursi',
-                'description' => 'Layanan cuci kursi',
-                'price' => 35000,
-                'type' => 'add_on'
-            ],
-            [
-                'name' => 'Karpet',
-                'description' => 'Layanan cuci karpet per m2',
-                'price' => 25000,
-                'type' => 'add_on',
-                'unit' => 'm2'
-            ],
-            [
-                'name' => 'Gorden',
-                'description' => 'Layanan cuci gorden per m2',
-                'price' => 20000,
-                'type' => 'add_on',
-                'unit' => 'm2'
-            ],
-            [
-                'name' => 'Car Interior (5 Seat)',
-                'description' => 'Layanan cuci interior mobil 5 kursi',
-                'price' => 250000,
-                'type' => 'add_on',
-                'seat_count' => 5
-            ],
-            [
-                'name' => 'Car Interior (8 Seat)',
-                'description' => 'Layanan cuci interior mobil 8 kursi',
-                'price' => 350000,
-                'type' => 'add_on',
-                'seat_count' => 8
-            ],
-            [
-                'name' => 'Bantal/Guling',
-                'description' => 'Layanan cuci bantal atau guling',
-                'price' => 15000,
-                'type' => 'add_on'
-            ]
-        ];
-
-        // Create all products and attach categories
-        foreach ($kasurProducts as $product) {
-            $newProduct = Product::create($product);
-            $newProduct->categories()->attach($kasurCategory->id);
+        foreach ($products as &$product) {
+            $name = $product['name'];
+            if ($product['type'] === 'kasur' && isset($hargaKasur[$name])) {
+                $product['price'] = $hargaKasur[$name][0];
+                $product['stock'] = 50;
+            } elseif ($product['type'] === 'sofa' && isset($hargaSofa[$name])) {
+                $product['price'] = $hargaSofa[$name][0];
+                $product['stock'] = 30;
+            } elseif ($product['type'] === 'perlengkapan_bayi' && isset($hargaPerlengkapanBayi[$name])) {
+                $product['price'] = $hargaPerlengkapanBayi[$name][0];
+                $product['stock'] = 75;
+            } elseif ($product['type'] === 'add_on' && isset($hargaAddOn[$name])) {
+                $product['price'] = $hargaAddOn[$name][0];
+                $product['stock'] = 200;
+            } else {
+                $product['price'] = 0;
+                $product['stock'] = 100;
+            }
         }
+        unset($product);
 
-        foreach ($sofaProducts as $product) {
-            $newProduct = Product::create($product);
-            $newProduct->categories()->attach($sofaCategory->id);
-        }
-
-        foreach ($bayiProducts as $product) {
-            $newProduct = Product::create($product);
-            $newProduct->categories()->attach($bayiCategory->id);
-        }
-
-        foreach ($addOnProducts as $product) {
-            $newProduct = Product::create($product);
-            $newProduct->categories()->attach($addOnCategory->id);
+        foreach ($products as $product) {
+            Product::updateOrCreate(
+                ['name' => $product['name']],
+                $product
+            );
         }
     }
 }

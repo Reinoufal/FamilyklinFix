@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ServiceSeeder::class,
             ProductSeeder::class,
-            ProductOptionSeeder::class
+            ProductOptionSeeder::class,
+            UpdateProductStockSeeder::class
         ]);
     }
 }
